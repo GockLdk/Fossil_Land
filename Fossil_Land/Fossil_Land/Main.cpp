@@ -151,9 +151,9 @@ int main()
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 
-	Model Piso((char*)"Models/Esfera/Piso.obj");
-	Model Esfera((char*)"Models/Esfera/Esfera.obj");
-	Model cama((char*)"Models/Cama/Cama.obj");
+	Model Piso ((char*)"Models/Piso/Piso.obj");
+	Model Esfera ((char*)"Models/Esfera/Esfera.obj");
+	Model cama ((char*)"Models/Cama/Cama.obj");
 
 
 	
@@ -196,8 +196,8 @@ int main()
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.1f, 0.1f, 0.1f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.1f, 0.1f, 0.1f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.6f, 0.6f, 0.6f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.6f, 0.6f, 0.6f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
 
 
@@ -272,11 +272,11 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
 
 		// Cama, sin transparencia
-		model = glm::mat4(1);
+		/*model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		cama.Draw(lightingShader);
+		cama.Draw(lightingShader);*/
 		
 		
 		glBindVertexArray(0);

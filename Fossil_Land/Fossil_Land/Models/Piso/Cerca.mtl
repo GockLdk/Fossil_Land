@@ -1,0 +1,103 @@
+newmtl Piso:Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:Piso1:Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:Piso2:Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:Piso3:Piso2:Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:Piso4:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:Piso5:Piso4:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
+newmtl Piso:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Piso.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd camino.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks camino_S.jpg
+Ns 18.00
