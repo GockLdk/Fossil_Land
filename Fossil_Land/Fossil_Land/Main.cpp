@@ -34,7 +34,7 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
-Camera  camera(glm::vec3(0.0f, 1.0f, 4.0f));
+Camera  camera(glm::vec3(0.0f, 1.0f, 15.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
@@ -52,50 +52,7 @@ glm::vec3 pointLightPositions[] = {
 
 glm::vec3 Light1 = glm::vec3(0);
 
-// Cuadrado para referencia de las luces
-//float vertices[] = {
-//	 -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-//		0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-//		0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-//		0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-//	   -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-//	   -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-//
-//	   -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-//		0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-//		0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-//		0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-//	   -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-//	   -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-//
-//	   -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-//	   -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-//	   -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-//	   -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-//	   -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-//	   -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-//
-//		0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-//		0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-//		0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-//		0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-//		0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-//		0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-//
-//	   -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-//		0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-//		0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-//		0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-//	   -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-//	   -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-//
-//	   -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-//		0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-//		0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-//		0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-//	   -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-//	   -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
-//};
+
 
 
 
@@ -153,7 +110,17 @@ int main()
 
 	Model Piso ((char*)"Models/Piso/Piso.obj");
 	Model Esfera ((char*)"Models/Esfera/Esfera.obj");
-	Model cama ((char*)"Models/Cama/Cama.obj");
+	//Model cama ((char*)"Models/Cama/Cama.obj");
+
+	Model brontoCa ((char*)"Models/Dinosaurios/Bronto/brontoCabeza.obj");
+	Model brontoCu ((char*)"Models/Dinosaurios/Bronto/brontoCuerpo.obj");
+	Model ptero ((char*)"Models/Dinosaurios/Ptero/ptero.obj");
+
+
+	Model fuente ((char*)"Models/Sodas/Fuente/fuenteC.obj");
+	Model fuenteAgua ((char*)"Models/Sodas/Fuente/fuenteA.obj");
+	Model mesa ((char*)"Models/Sodas/Mesa/mesa.obj");
+	Model maquinas ((char*)"Models/Sodas/Maquina/maquinas.obj");
 
 
 	
@@ -259,17 +226,17 @@ int main()
 		Piso.Draw(lightingShader);
 
 		// Esfera con Transparencia
-		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 0.0, 0.75);
-		Esfera.Draw(lightingShader);
-		glDisable(GL_BLEND);  //Desactiva el canal alfa 
-		// Para que no cambie el color el canal alpha a los demas objetos
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
+		//glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(0.0f, -5.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 0.0, 0.75);
+		//Esfera.Draw(lightingShader);
+		//glDisable(GL_BLEND);  //Desactiva el canal alfa 
+		//// Para que no cambie el color el canal alpha a los demas objetos
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
 
 		// Cama, sin transparencia
 		/*model = glm::mat4(1);
@@ -278,7 +245,92 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		cama.Draw(lightingShader);*/
 		
+		/* Brontosaurio */
+		/*model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		brontoCa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		brontoCu.Draw(lightingShader);*/
+
+		/* Pterodactilo */
+		/*model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-10.0f, 2.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		ptero.Draw(lightingShader);*/
 		
+
+		/* Fuente */
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
+		fuenteAgua.Draw(lightingShader);
+		glDisable(GL_BLEND);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		fuente.Draw(lightingShader);
+
+		/* Mesas */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-39.0f, 0.0f, 20.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-34.0f, 0.0f, 20.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-39.0f, 0.0f, 27.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-34.0f, 0.0f, 27.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-39.0f, 0.0f, 35.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-34.0f, 0.0f, 35.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-39.0f, 0.0f, 42.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-34.0f, 0.0f, 42.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+
+		/* Maquinas */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-36.0f, 0.0f, 47.9f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		maquinas.Draw(lightingShader);
+
 		glBindVertexArray(0);
 
 
