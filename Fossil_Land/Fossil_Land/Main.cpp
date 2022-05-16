@@ -34,7 +34,7 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
-Camera  camera(glm::vec3(0.0f, 1.0f, 15.0f));
+Camera  camera(glm::vec3(0.0f, 2.0f, 45.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
@@ -121,6 +121,8 @@ int main()
 	Model fuenteAgua ((char*)"Models/Sodas/Fuente/fuenteA.obj");
 	Model mesa ((char*)"Models/Sodas/Mesa/mesa.obj");
 	Model maquinas ((char*)"Models/Sodas/Maquina/maquinas.obj");
+
+	Model cartel((char*)"Models/Piso/cartel.obj");
 
 
 	
@@ -330,6 +332,12 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		maquinas.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 43.f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		cartel.Draw(lightingShader);
 
 		glBindVertexArray(0);
 
