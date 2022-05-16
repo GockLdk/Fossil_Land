@@ -42,6 +42,16 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Pared_S.png
 Ns 18.00
+newmtl Piso:pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
 newmtl Piso:pasted__phong2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -77,9 +87,10 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd madera.jpg
+map_Kd Pared.png
 Ni 1.00
-Ks 0.50 0.50 0.50
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
 Ns 18.00
 newmtl Piso:phong1SG2
 illum 4
@@ -104,12 +115,21 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong1SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
 map_Kd Oak.jpg
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Oak_bump.jpg
 Ns 18.00
-newmtl Piso:phong1SG8
+newmtl Piso:phong1SG10
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -119,7 +139,7 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks camino_S.jpg
 Ns 18.00
-newmtl Piso:phong1SG10
+newmtl Piso:phong1SG12
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -128,15 +148,6 @@ map_Kd Piso.jpg
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Piso_S.png
-Ns 18.00
-newmtl Piso:phong1SG12
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd madera.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
 Ns 18.00
 newmtl Piso:phong1SG14
 illum 4
@@ -174,6 +185,15 @@ map_Kd madera.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
+newmtl Piso:phong1SG22
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
 newmtl Piso:phong2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -193,6 +213,16 @@ map_Kd ladrillo.jpg
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks ladrillo_S.jpg
+Ns 18.00
+newmtl Piso:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Techo_S.png
 Ns 18.00
 newmtl Piso:phong3SG
 illum 4
@@ -2586,33 +2616,13 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks mostrador_S.png
 Ns 18.00
-newmtl pasted__phong1SG
+newmtl plants_obj:phong1SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Pared.png
+map_Kd building_31_Sky_Material_BaseColor.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
-Ns 18.00
-newmtl phong1SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Pared.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
-Ns 18.00
-newmtl phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks Techo_S.png
+map_Ks building_31_Sky_Material_Metallic.png
 Ns 18.00

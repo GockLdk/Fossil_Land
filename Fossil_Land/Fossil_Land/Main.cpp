@@ -108,24 +108,34 @@ int main()
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 
+	/* Parque */
 	Model Piso ((char*)"Models/Piso/Piso.obj");
-	Model Esfera ((char*)"Models/Esfera/Esfera.obj");
-	//Model cama ((char*)"Models/Cama/Cama.obj");
-
-	Model brontoCa ((char*)"Models/Dinosaurios/Bronto/brontoCabeza.obj");
-	Model brontoCu ((char*)"Models/Dinosaurios/Bronto/brontoCuerpo.obj");
-	Model ptero ((char*)"Models/Dinosaurios/Ptero/ptero.obj");
-
-
+	
 	Model fuente ((char*)"Models/Sodas/Fuente/fuenteC.obj");
 	Model fuenteAgua ((char*)"Models/Sodas/Fuente/fuenteA.obj");
 	Model mesa ((char*)"Models/Sodas/Mesa/mesa.obj");
 	Model maquinas ((char*)"Models/Sodas/Maquina/maquinas.obj");
 
-	Model cartel((char*)"Models/Piso/cartel.obj");
+	Model cartel ((char*)"Models/Piso/cartel.obj");
 
+	/* Dinosaurios */
+	Model brontoCa ((char*)"Models/Dinosaurios/Bronto/brontoCabeza.obj");
+	Model brontoCu ((char*)"Models/Dinosaurios/Bronto/brontoCuerpo.obj");
 
-	
+	Model pteroCu ((char*)"Models/Dinosaurios/Ptero/pteroCu.obj");
+	Model pteroAlaD ((char*)"Models/Dinosaurios/Ptero/pteroAlaD.obj");
+	Model pteroAlaI ((char*)"Models/Dinosaurios/Ptero/pteroAlaI.obj");
+
+	Model veloCu ((char*)"Models/Dinosaurios/Velo/veloCu.obj");
+	Model veloHomD ((char*)"Models/Dinosaurios/Velo/veloHombroDer.obj");
+	Model veloBraD ((char*)"Models/Dinosaurios/Velo/veloBrazoDer.obj");
+	Model veloHomI ((char*)"Models/Dinosaurios/Velo/veloHombroIzq.obj");
+	Model veloBraI ((char*)"Models/Dinosaurios/Velo/veloBrazoIzq.obj");
+
+	Model tRexCu ((char*)"Models/Dinosaurios/Trex/T_rexCu.obj");
+	Model tRexPD ((char*)"Models/Dinosaurios/Trex/T_rexPiernaD.obj");
+	Model tRexPI ((char*)"Models/Dinosaurios/Trex/T_rexPiernaI.obj");
+
 
 	// Set texture units
 	lightingShader.Use();
@@ -221,52 +231,13 @@ int main()
 		//Carga de modelo 
 		view = camera.GetViewMatrix();
 
-		//Piso
+		/* PARQUE */
+		/* Piso */
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		Piso.Draw(lightingShader);
-
-		// Esfera con Transparencia
-		//glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
-		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(0.0f, -5.0f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 0.0, 0.75);
-		//Esfera.Draw(lightingShader);
-		//glDisable(GL_BLEND);  //Desactiva el canal alfa 
-		//// Para que no cambie el color el canal alpha a los demas objetos
-		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
-
-		// Cama, sin transparencia
-		/*model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		cama.Draw(lightingShader);*/
-		
-		/* Brontosaurio */
-		/*model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		brontoCa.Draw(lightingShader);
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		brontoCu.Draw(lightingShader);*/
-
-		/* Pterodactilo */
-		/*model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-10.0f, 2.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		ptero.Draw(lightingShader);*/
-		
-
+					
 		/* Fuente */
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -338,6 +309,82 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		cartel.Draw(lightingShader);
+
+		/* DINOSAURIOS */
+
+		/* Brontosaurio */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, 40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		brontoCa.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, 40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		brontoCu.Draw(lightingShader);
+
+		/* Pterodactilo */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-35.0f, 7.0f, -35.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		pteroCu.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-35.0f, 7.0f, -35.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		pteroAlaD.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-35.0f, 7.0f, -35.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		pteroAlaI.Draw(lightingShader);
+
+
+		/* Velociraptor */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		veloCu.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		veloHomD.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		veloBraD.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		veloHomI.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		veloBraI.Draw(lightingShader);
+
+		/* T-Rex */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-40.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		tRexCu.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-40.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		tRexPD.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-40.0f, 0.0f, -40.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		tRexPI.Draw(lightingShader);
 
 		glBindVertexArray(0);
 
