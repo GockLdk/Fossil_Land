@@ -28,6 +28,10 @@
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow* window, double xPos, double yPos);
 void DoMovement();
+void animacion();
+void animacionPtero();
+void animacionBronto();
+void animacionTrex();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -41,8 +45,42 @@ bool keys[1024];
 bool firstMouse = true;
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
-bool active;
+bool active = true;
+bool luces = false;
 
+// Variables de las animaciones
+// Animacion Pterodactilo
+glm::vec3 PosIniPtero(-35.0f, 11.0f, -40.0f);
+float movKitX = 0.0;
+float movKitZ = 0.0;
+float rotKit = 0.0;
+bool recorrido1 = true;
+bool recorrido2 = false;
+bool recorrido3 = false;
+bool recorrido4 = false;
+bool recorrido5 = false;
+bool alas = false;
+float rotAlaD = 0.0f;
+float rotAlaI = 0.0f;
+
+// Animacion Brontosaurio
+float movBronto = 40.0f;
+float rotCuello = 0.0f;
+bool cuello = false;
+
+// Animacion T-Rex
+glm::vec3 PosIniTrex(-43.0f, 0.0f, -40.0f);
+glm::vec3 correcionD(-0.5f, 5.2f, 1.1f);
+glm::vec3 correcionI(-0.5f, 5.2f, -1.1f);
+float movKitX2 = 0.0;
+float movKitZ2 = 0.0;
+float rotKit2 = 90.0;
+bool camino1 = true;
+bool camino2 = false;
+bool camino3 = false;
+bool patas = false;
+float rotPataD = 0.0f;
+float rotPataI = 0.0f;
 
 // Positions of the point lights
 // Indicar en el lighting.frag el num de point ligths y agregar sus posiciones aqui
@@ -156,6 +194,7 @@ int main()
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();
 		DoMovement();
+		animacion();
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -314,29 +353,36 @@ int main()
 
 		/* Brontosaurio */
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(36.0f, 0.0f, 40.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		brontoCa.Draw(lightingShader);
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(36.0f, 0.0f, 40.0f));
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, movBronto));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		brontoCu.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(36.0f, 0.0f, 40.0f));
+		model = glm::rotate(model, glm::radians(rotCuello), glm::vec3(1.0f, 0.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		brontoCa.Draw(lightingShader);
+		
 
 		/* Pterodactilo */
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-35.0f, 7.0f, -35.0f));
+		model = glm::translate(model, PosIniPtero + glm::vec3(movKitX, 0, movKitZ));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		pteroCu.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-35.0f, 7.0f, -35.0f));
+		model = glm::translate(model, PosIniPtero + glm::vec3(movKitX, 0, movKitZ));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::rotate(model, glm::radians(rotAlaD), glm::vec3(0.0f, 0.0f, 1.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		pteroAlaD.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-35.0f, 7.0f, -35.0f));
+		model = glm::translate(model, PosIniPtero + glm::vec3(movKitX, 0, movKitZ));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::rotate(model, glm::radians(rotAlaI), glm::vec3(0.0f, 0.0f, 1.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		pteroAlaI.Draw(lightingShader);
@@ -369,19 +415,24 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloBraI.Draw(lightingShader);
 
-		/* T-Rex */
+		///* T-Rex */
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-40.0f, 0.0f, -40.0f));
+		model = glm::translate(model, PosIniTrex + glm::vec3(movKitX2, 0, movKitZ2));
+		model = glm::rotate(model, glm::radians(rotKit2), glm::vec3(0.0f, 1.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		tRexCu.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-40.0f, 0.0f, -40.0f));
+		model = glm::translate(model, PosIniTrex + correcionD + glm::vec3(movKitX2, 0, movKitZ2));
+		model = glm::rotate(model, glm::radians(rotKit2), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::rotate(model, glm::radians(rotPataD), glm::vec3(1.0f, 0.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		tRexPD.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-40.0f, 0.0f, -40.0f));
+		model = glm::translate(model, PosIniTrex + correcionI + glm::vec3(movKitX2, 0, movKitZ2));
+		model = glm::rotate(model, glm::radians(rotKit2), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::rotate(model, glm::radians(rotPataI), glm::vec3(1.0f, 0.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		tRexPI.Draw(lightingShader);
@@ -466,9 +517,16 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 	if (keys[GLFW_KEY_SPACE])
 	{
 		active = !active;
-		if (active)
+	}
+
+	if (keys[GLFW_KEY_L])
+	{
+		luces = !luces;
+		// Luz
+		if (luces)
 		{
-			Light1 = glm::vec3(1.0f, 1.0f, 0.0f);
+			Light1 = glm::vec3(1.0f, 1.0f, 1.0f);
+
 		}
 		else
 		{
@@ -493,4 +551,161 @@ void MouseCallback(GLFWwindow* window, double xPos, double yPos)
 	lastY = yPos;
 
 	camera.ProcessMouseMovement(xOffset, yOffset);
+}
+
+void animacion()
+{
+	if (active)
+	{
+		animacionPtero();
+		animacionBronto();
+		animacionTrex();
+	}
+}
+
+void animacionPtero()
+{
+	//Movimiento del Ptero
+	if (recorrido1)
+	{
+		movKitZ += 0.1f;
+		if (movKitZ > 70)
+		{
+			recorrido1 = false;
+			recorrido2 = true;
+		}
+	}
+	if (recorrido2)
+	{
+		rotKit = 90;
+		movKitX += 0.1f;
+		if (movKitX > 70)
+		{
+			recorrido2 = false;
+			recorrido3 = true;
+
+		}
+	}
+
+	if (recorrido3)
+	{
+		rotKit = 180;
+		movKitZ -= 0.1f;
+		if (movKitZ < 0)
+		{
+			recorrido3 = false;
+			recorrido4 = true;
+		}
+	}
+
+	if (recorrido4)
+	{
+		rotKit = 270;
+		movKitX -= 0.1f;
+		if (movKitX < 0)
+		{
+			recorrido4 = false;
+			recorrido5 = true;
+		}
+	}
+	if (recorrido5)
+	{
+		rotKit = 0;
+		movKitZ += 0.1f;
+		if (movKitZ > 0)
+		{
+			recorrido5 = false;
+			recorrido1 = true;
+		}
+	}
+	// Alas del Ptero
+	if (rotAlaI < 20 && !alas)
+	{
+		rotAlaI += 0.1f;
+		rotAlaD -= 0.1f;
+	}
+	else
+		alas = true;
+	if (rotAlaI > -20 && alas)
+	{
+		rotAlaI -= 0.1f;
+		rotAlaD += 0.1f;
+	}
+	else
+		alas = false;
+}
+
+void animacionBronto()
+{
+	if (rotCuello < 5 && !cuello)
+	{
+		rotCuello += 0.1f;
+		movBronto += 0.006f;
+	}
+	else
+		cuello = true;
+	if (rotCuello > 0 && cuello)
+	{
+		rotCuello -= 0.1f;
+		movBronto -= 0.006f;
+	}	
+	else
+		cuello = false;
+}
+
+void animacionTrex()
+{
+	// Recorrido del T-Rex
+	if (camino1)
+	{
+		movKitX2 += 0.1f;
+		if (movKitX2 > 10)
+		{
+			camino1 = false;
+			camino2 = true;
+			correcionD = glm::vec3(-0.54f, 5.2f, -1.22f);
+			correcionI = glm::vec3(1.22f, 5.2f, 0.54f);
+		}
+	}
+	if (camino2)
+	{
+		rotKit2 = -45;
+		movKitZ2 += 0.2f;
+		movKitX2 -= 0.1f;
+		if (movKitZ2 > 25)
+		{
+			camino2 = false;
+			camino3 = true;
+			correcionD = glm::vec3(1.0f, 5.2f, 0.5f);
+			correcionI = glm::vec3(-1.0f, 5.2f, 0.5f);
+		}
+	}
+	if (camino3)
+	{
+		rotKit2 = 180;
+		movKitZ2 -= 0.1f;
+		if (movKitZ2 < 0)
+		{
+			camino3 = false;
+			camino1 = true;
+			rotKit2 = 90;
+			correcionD = glm::vec3(-0.5f, 5.2f, 1.1f);
+			correcionI = glm::vec3(-0.5f, 5.2f, -1.1f);
+		}
+	}
+	// Patas del T-Rex
+	if (rotPataI < 20 && !patas)
+	{
+		rotPataI += 0.5f;
+		rotPataD -= 0.5f;
+	}
+	else
+		patas = true;
+	if (rotPataI > -20 && patas)
+	{
+		rotPataI -= 0.5f;
+		rotPataD += 0.5f;
+	}
+	else
+		patas = false;
 }
