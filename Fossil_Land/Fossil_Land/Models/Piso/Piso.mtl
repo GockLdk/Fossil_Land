@@ -194,6 +194,16 @@ map_Kd madera.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
+newmtl Piso:phong1SG24
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd building_31_Sky_Material_BaseColor.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks building_31_Sky_Material_Metallic.png
+Ns 18.00
 newmtl Piso:phong2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -2616,13 +2626,129 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks mostrador_S.png
 Ns 18.00
-newmtl plants_obj:phong1SG
+newmtl cartel:phong1SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd building_31_Sky_Material_BaseColor.png
+map_Kd logo.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks building_31_Sky_Material_Metallic.png
+map_Ks logo_S.png
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl pasted__pasted__pasted__pasted__pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__pasted__pasted__pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__pasted__pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__pasted__pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
+newmtl phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
 Ns 18.00

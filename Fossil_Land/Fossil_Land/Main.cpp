@@ -32,6 +32,7 @@ void animacion();
 void animacionPtero();
 void animacionBronto();
 void animacionTrex();
+void animacionPer();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -82,6 +83,11 @@ bool patas = false;
 float rotPataD = 0.0f;
 float rotPataI = 0.0f;
 
+// Animacion Persona
+bool brazo = false;
+float rotBrazo = 0.0f;
+
+
 // Positions of the point lights
 // Indicar en el lighting.frag el num de point ligths y agregar sus posiciones aqui
 glm::vec3 pointLightPositions[] = {
@@ -89,9 +95,6 @@ glm::vec3 pointLightPositions[] = {
 };
 
 glm::vec3 Light1 = glm::vec3(0);
-
-
-
 
 
 // Deltatime
@@ -154,8 +157,6 @@ int main()
 	Model mesa ((char*)"Models/Sodas/Mesa/mesa.obj");
 	Model maquinas ((char*)"Models/Sodas/Maquina/maquinas.obj");
 
-	Model cartel ((char*)"Models/Piso/cartel.obj");
-
 	/* Dinosaurios */
 	Model brontoCa ((char*)"Models/Dinosaurios/Bronto/brontoCabeza.obj");
 	Model brontoCu ((char*)"Models/Dinosaurios/Bronto/brontoCuerpo.obj");
@@ -173,6 +174,9 @@ int main()
 	Model tRexCu ((char*)"Models/Dinosaurios/Trex/T_rexCu.obj");
 	Model tRexPD ((char*)"Models/Dinosaurios/Trex/T_rexPiernaD.obj");
 	Model tRexPI ((char*)"Models/Dinosaurios/Trex/T_rexPiernaI.obj");
+
+	Model personaCu ((char*)"Models/Persona/personaCu.obj");
+	Model personaBra ((char*)"Models/Persona/personaBraT.obj");
 
 
 	// Set texture units
@@ -343,11 +347,7 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		maquinas.Draw(lightingShader);
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 43.f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		cartel.Draw(lightingShader);
+		
 
 		/* DINOSAURIOS */
 
@@ -436,6 +436,21 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		tRexPI.Draw(lightingShader);
+
+		/* Persona */
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 33.0f));
+		model = glm::scale(model, glm::vec3(2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		personaCu.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.51f, 2.6f, 33.3f));
+		model = glm::scale(model, glm::vec3(2.0f));
+		model = glm::rotate(model, glm::radians(rotBrazo), glm::vec3(1.0f, 0.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		personaBra.Draw(lightingShader);
 
 		glBindVertexArray(0);
 
@@ -560,6 +575,7 @@ void animacion()
 		animacionPtero();
 		animacionBronto();
 		animacionTrex();
+		animacionPer();
 	}
 }
 
@@ -708,4 +724,17 @@ void animacionTrex()
 	}
 	else
 		patas = false;
+}
+
+void animacionPer()
+{
+	// Brazo de la persona persona
+	if (rotBrazo < 30 && !brazo)
+		rotBrazo += 0.1f;
+	else
+		brazo = true;
+	if (rotBrazo > 0 && brazo)
+		rotBrazo -= 0.1f;
+	else
+		brazo = false;
 }
