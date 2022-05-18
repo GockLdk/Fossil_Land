@@ -1,3 +1,9 @@
+newmtl Piso:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
 newmtl Piso:lambert2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -47,6 +53,16 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+map_Kd Entrada.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Entrada_S.png
+Ns 18.00
+newmtl Piso:pasted__phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
 map_Kd Pared.png
 Ni 1.00
 Ks 0.00 0.00 0.00
@@ -57,12 +73,12 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Pared.png
+map_Kd Salida.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
+map_Ks Salida_S.png
 Ns 18.00
-newmtl Piso:pasted__phong2SG1
+newmtl Piso:pasted__phong2SG2
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -71,6 +87,26 @@ map_Kd Pared.png
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:pasted__phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:pasted__phong2SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
 Ns 18.00
 newmtl Piso:pasted__phong3SG
 illum 4
@@ -87,10 +123,10 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Pared.png
+map_Kd Entrada.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
+map_Ks Entrada_S.png
 Ns 18.00
 newmtl Piso:phong1SG2
 illum 4
@@ -176,15 +212,6 @@ map_Kd madera.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong1SG20
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd madera.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
 newmtl Piso:phong1SG22
 illum 4
 Kd 0.00 0.00 0.00
@@ -204,7 +231,16 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks building_31_Sky_Material_Metallic.png
 Ns 18.00
-newmtl Piso:phong2SG
+newmtl Piso:phong1SG27
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong1SG32
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -213,6 +249,36 @@ map_Kd Pared.png
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:phong1SG34
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd logo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks logo_S.png
+Ns 18.00
+newmtl Piso:phong1SG37
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Salida.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Salida_S.png
 Ns 18.00
 newmtl Piso:phong2SG2
 illum 4
@@ -225,6 +291,16 @@ Ks 0.00 0.00 0.00
 map_Ks ladrillo_S.jpg
 Ns 18.00
 newmtl Piso:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:phong2SG6
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -476,15 +552,7 @@ Tf 1.00 1.00 1.00
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong3SG60
-illum 4
-Kd 0.50 0.50 0.50
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong3SG62
+newmtl Piso:phong3SG61
 illum 4
 Kd 0.50 0.50 0.50
 Ka 0.00 0.00 0.00
@@ -540,14 +608,6 @@ Tf 1.00 1.00 1.00
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong3SG76
-illum 4
-Kd 0.50 0.50 0.50
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
 newmtl Piso:phong3SG78
 illum 4
 Kd 0.50 0.50 0.50
@@ -557,6 +617,22 @@ Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
 newmtl Piso:phong3SG80
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong3SG82
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong3SG84
 illum 4
 Kd 0.50 0.50 0.50
 Ka 0.00 0.00 0.00
@@ -1482,51 +1558,6 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG204
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG206
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG208
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG210
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG212
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
 newmtl Piso:phong4SG214
 illum 4
 Kd 0.00 0.00 0.00
@@ -2022,34 +2053,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG324
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG326
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG328
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG330
+newmtl Piso:phong4SG329
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2067,16 +2071,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG334
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG336
+newmtl Piso:phong4SG335
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2094,7 +2089,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG340
+newmtl Piso:phong4SG341
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2103,25 +2098,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG342
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG344
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG346
+newmtl Piso:phong4SG345
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2148,16 +2125,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG352
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG354
+newmtl Piso:phong4SG353
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2184,16 +2152,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG360
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG362
+newmtl Piso:phong4SG361
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2220,7 +2179,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG368
+newmtl Piso:phong4SG369
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2229,7 +2188,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG370
+newmtl Piso:phong4SG371
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2238,7 +2197,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG372
+newmtl Piso:phong4SG373
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2247,7 +2206,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG374
+newmtl Piso:phong4SG375
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2256,7 +2215,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG376
+newmtl Piso:phong4SG377
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2265,7 +2224,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG378
+newmtl Piso:phong4SG379
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2274,7 +2233,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG380
+newmtl Piso:phong4SG381
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2283,7 +2242,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG382
+newmtl Piso:phong4SG383
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2292,7 +2251,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG384
+newmtl Piso:phong4SG385
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2301,7 +2260,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG386
+newmtl Piso:phong4SG387
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2310,7 +2269,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG388
+newmtl Piso:phong4SG389
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2319,7 +2278,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG390
+newmtl Piso:phong4SG391
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2328,7 +2287,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG392
+newmtl Piso:phong4SG393
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2337,7 +2296,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG394
+newmtl Piso:phong4SG395
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2346,7 +2305,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG396
+newmtl Piso:phong4SG397
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2355,7 +2314,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG398
+newmtl Piso:phong4SG399
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2364,7 +2323,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG400
+newmtl Piso:phong4SG401
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2373,7 +2332,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG402
+newmtl Piso:phong4SG403
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2382,7 +2341,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG404
+newmtl Piso:phong4SG405
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2391,7 +2350,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG406
+newmtl Piso:phong4SG407
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2400,7 +2359,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG408
+newmtl Piso:phong4SG409
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2409,7 +2368,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG410
+newmtl Piso:phong4SG411
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2418,7 +2377,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG412
+newmtl Piso:phong4SG413
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2427,7 +2386,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG414
+newmtl Piso:phong4SG415
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2436,7 +2395,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG416
+newmtl Piso:phong4SG417
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2445,7 +2404,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG418
+newmtl Piso:phong4SG419
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2454,7 +2413,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG420
+newmtl Piso:phong4SG421
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2463,7 +2422,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG422
+newmtl Piso:phong4SG423
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2472,7 +2431,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG424
+newmtl Piso:phong4SG425
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2481,7 +2440,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG426
+newmtl Piso:phong4SG427
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2490,7 +2449,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG428
+newmtl Piso:phong4SG429
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2499,7 +2458,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG430
+newmtl Piso:phong4SG431
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2508,7 +2467,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG432
+newmtl Piso:phong4SG433
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2517,7 +2476,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG434
+newmtl Piso:phong4SG435
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2526,7 +2485,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG436
+newmtl Piso:phong4SG437
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2535,7 +2494,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG438
+newmtl Piso:phong4SG439
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2544,16 +2503,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG440
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd piedra.jpg
-Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:phong4SG442
+newmtl Piso:phong4SG441
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2580,7 +2530,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG448
+newmtl Piso:phong4SG449
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2589,7 +2539,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG450
+newmtl Piso:phong4SG451
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2598,7 +2548,7 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG452
+newmtl Piso:phong4SG453
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2607,7 +2557,133 @@ map_Kd piedra.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong4SG454
+newmtl Piso:phong4SG456
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG461
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG463
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG466
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG469
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG471
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG474
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG477
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG480
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG483
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG486
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG489
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG492
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG495
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl Piso:phong4SG511
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2625,130 +2701,4 @@ map_Kd mostrador.png
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks mostrador_S.png
-Ns 18.00
-newmtl cartel:phong1SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd logo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks logo_S.png
-Ns 18.00
-newmtl initialShadingGroup
-illum 4
-Kd 0.50 0.50 0.50
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl pasted__pasted__pasted__pasted__pasted__phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__pasted__pasted__pasted__phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__pasted__pasted__pasted__phong2SG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__pasted__pasted__phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__pasted__pasted__phong2SG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__pasted__phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__pasted__phong2SG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl pasted__phong2SG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
-newmtl phong1SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Pared.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
-Ns 18.00
-newmtl phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
 Ns 18.00

@@ -151,6 +151,7 @@ int main()
 
 	/* Parque */
 	Model Piso ((char*)"Models/Piso/Piso.obj");
+	Model habitats ((char*)"Models/Piso/habitats2.obj");
 	
 	Model fuente ((char*)"Models/Sodas/Fuente/fuenteC.obj");
 	Model fuenteAgua ((char*)"Models/Sodas/Fuente/fuenteA.obj");
@@ -280,7 +281,13 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		Piso.Draw(lightingShader);
-					
+
+		/* Habitats */
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		habitats.Draw(lightingShader);
+
 		/* Fuente */
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -415,7 +422,7 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloBraI.Draw(lightingShader);
 
-		///* T-Rex */
+		/* T-Rex */
 		model = glm::mat4(1);
 		model = glm::translate(model, PosIniTrex + glm::vec3(movKitX2, 0, movKitZ2));
 		model = glm::rotate(model, glm::radians(rotKit2), glm::vec3(0.0f, 1.0f, 0.0));
