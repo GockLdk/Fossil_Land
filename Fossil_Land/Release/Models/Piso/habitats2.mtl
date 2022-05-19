@@ -1,0 +1,30 @@
+newmtl habitats:phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd hojas.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks hojas_S.png
+Ns 18.00
+newmtl habitats:phong4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd tronco.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks tronco_S.png
+Ns 18.00
+newmtl habitats:phong7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd piedra.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks piedra_S.png
+Ns 18.00

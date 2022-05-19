@@ -5,16 +5,6 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd grass.jpg
 Ni 1.00
-newmtl Piso:pasted__pasted__pasted__pasted__pasted__phong2SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
 newmtl Piso:pasted__pasted__pasted__pasted__phong1SG4
 illum 4
 Kd 0.00 0.00 0.00
@@ -24,16 +14,6 @@ map_Kd madera.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:pasted__pasted__pasted__pasted__phong2SG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
-Ns 18.00
 newmtl Piso:pasted__pasted__pasted__phong1SG4
 illum 4
 Kd 0.00 0.00 0.00
@@ -42,16 +22,6 @@ Tf 1.00 1.00 1.00
 map_Kd madera.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
-Ns 18.00
-newmtl Piso:pasted__pasted__pasted__phong2SG1
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Techo.png
-Ni 1.00
-Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
 Ns 18.00
 newmtl Piso:pasted__pasted__phong1SG4
 illum 4
@@ -72,17 +42,17 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Pared_S.png
 Ns 18.00
-newmtl Piso:pasted__pasted__phong2SG3
+newmtl Piso:pasted__phong1SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Techo.png
+map_Kd Entrada.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks barrote_S.png
+map_Ks Entrada_S.png
 Ns 18.00
-newmtl Piso:pasted__phong1SG
+newmtl Piso:pasted__phong1SG2
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -91,6 +61,16 @@ map_Kd Pared.png
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Salida.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Salida_S.png
 Ns 18.00
 newmtl Piso:pasted__phong2SG2
 illum 4
@@ -137,10 +117,10 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Pared.png
+map_Kd Entrada.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
+map_Ks Entrada_S.png
 Ns 18.00
 newmtl Piso:phong1SG2
 illum 4
@@ -254,7 +234,17 @@ map_Kd madera.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
-newmtl Piso:phong1SG33
+newmtl Piso:phong1SG32
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:phong1SG34
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -264,7 +254,7 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks logo_S.png
 Ns 18.00
-newmtl Piso:phong1SG36
+newmtl Piso:phong1SG37
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -279,10 +269,10 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Pared.png
+map_Kd Salida.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks Pared_S.png
+map_Ks Salida_S.png
 Ns 18.00
 newmtl Piso:phong2SG2
 illum 4
@@ -294,7 +284,17 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks ladrillo_S.jpg
 Ns 18.00
-newmtl Piso:phong2SG5
+newmtl Piso:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pared.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Pared_S.png
+Ns 18.00
+newmtl Piso:phong2SG6
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -2695,4 +2695,104 @@ map_Kd mostrador.png
 Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks mostrador_S.png
+Ns 18.00
+newmtl barrotes:pasted__pasted__pasted__pasted__pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes:pasted__pasted__pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes:pasted__pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes:pasted__pasted__phong2SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes:pasted__phong2SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes1:pasted__pasted__pasted__pasted__pasted__phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes1:pasted__pasted__pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes1:pasted__pasted__pasted__phong2SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes1:pasted__pasted__phong2SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
+Ns 18.00
+newmtl barrotes1:pasted__phong2SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barrote_S.png
 Ns 18.00
