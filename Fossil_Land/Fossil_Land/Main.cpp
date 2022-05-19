@@ -34,6 +34,7 @@ void animacionPtero();
 void animacionBronto();
 void animacionTrex();
 void animacionPer();
+void animKeyFrame();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -45,7 +46,12 @@ GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
 bool firstMouse = true;
+
 // Light attributes
+glm::vec3 PosIniHI(34.89f, 1.85f, -39.76);
+glm::vec3 PosIniBI(34.89f, 1.85f, -39.76);
+glm::vec3 PosIniHD(34.89f, 1.85f, -40.21f);
+glm::vec3 PosIniBD(34.89f, 1.85f, -40.21f);
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 bool active = true;
 bool luces = false;
@@ -101,6 +107,128 @@ glm::vec3 Light1 = glm::vec3(0);
 // Deltatime
 GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
+
+// Keyframes
+float posX = PosIniHI.x, posY = PosIniHI.y, posZ = PosIniHI.z, rotHI = 0;
+float posXBI = PosIniBI.x, posYBI = PosIniBI.y, posZBI = PosIniBI.z, rotBI = 0, rotBIX = 0;
+float posXHD = PosIniHD.x, posYHD = PosIniHD.y, posZHD = PosIniHD.z, rotHD = 0; 
+float posXBD = PosIniBD.x, posYBD = PosIniBD.y, posZBD = PosIniBD.z, rotBD = 0, rotBDX = 0;
+
+#define MAX_FRAMES 9
+int i_max_steps = 120;
+int i_curr_steps = 0;
+typedef struct _frame
+{
+	//Variables para GUARDAR Key Frames
+	float posX;		//Variable para PosicionX
+	float posY;		//Variable para PosicionY
+	float posZ;		//Variable para PosicionZ
+	float incX;		//Variable para IncrementoX
+	float incY;		//Variable para IncrementoY
+	float incZ;		//Variable para IncrementoZ
+	float rotHI;
+	float rotIncHI;
+
+	float posXBI;		//Variable para PosicionX
+	float posYBI;		//Variable para PosicionY
+	float posZBI;		//Variable para PosicionZ
+	float incXBI;		//Variable para IncrementoX
+	float incYBI;		//Variable para IncrementoY
+	float incZBI;		//Variable para IncrementoZ
+	float rotBI;
+	float rotIncBI;
+	float rotBIX;
+	float rotIncBIX;
+
+	float posXHD;		//Variable para PosicionX
+	float posYHD;		//Variable para PosicionY
+	float posZHD;		//Variable para PosicionZ
+	float incXHD;		//Variable para IncrementoX
+	float incYHD;		//Variable para IncrementoY
+	float incZHD;		//Variable para IncrementoZ
+	float rotHD;
+	float rotIncHD;
+
+	float posXBD;		//Variable para PosicionX
+	float posYBD;		//Variable para PosicionY
+	float posZBD;		//Variable para PosicionZ
+	float incXBD;		//Variable para IncrementoX
+	float incYBD;		//Variable para IncrementoY
+	float incZBD;		//Variable para IncrementoZ
+	float rotBD;
+	float rotIncBD;
+	float rotBDX;
+	float rotIncBDX;
+
+}FRAME;
+
+FRAME KeyFrame[MAX_FRAMES];
+int FrameIndex = 8;			//introducir datos
+bool play = false;
+int playIndex = 0;
+
+
+void resetElements(void)
+{
+	posX = KeyFrame[0].posX;
+	posY = KeyFrame[0].posY;
+	posZ = KeyFrame[0].posZ;
+
+	rotHI = KeyFrame[0].rotHI;
+
+	posXBI = KeyFrame[0].posXBI;
+	posYBI = KeyFrame[0].posYBI;
+	posZBI = KeyFrame[0].posZBI;
+
+	rotBI = KeyFrame[0].rotBI;
+	rotBIX = KeyFrame[0].rotBIX;
+
+	posXHD = KeyFrame[0].posXHD;
+	posYHD = KeyFrame[0].posYHD;
+	posZHD = KeyFrame[0].posZHD;
+
+	rotHD = KeyFrame[0].rotHD;
+
+	posXBD = KeyFrame[0].posXBD;
+	posYBD = KeyFrame[0].posYBD;
+	posZBD = KeyFrame[0].posZBD;
+
+	rotBD = KeyFrame[0].rotBD;
+	rotBDX = KeyFrame[0].rotBDX;
+
+
+}
+
+void interpolation(void)
+{
+
+	KeyFrame[playIndex].incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
+	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
+	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncHI = (KeyFrame[playIndex + 1].rotHI - KeyFrame[playIndex].rotHI) / i_max_steps;
+
+	KeyFrame[playIndex].incXBI = (KeyFrame[playIndex + 1].posXBI - KeyFrame[playIndex].posXBI) / i_max_steps;
+	KeyFrame[playIndex].incYBI = (KeyFrame[playIndex + 1].posYBI - KeyFrame[playIndex].posYBI) / i_max_steps;
+	KeyFrame[playIndex].incZBI = (KeyFrame[playIndex + 1].posZBI - KeyFrame[playIndex].posZBI) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncBI = (KeyFrame[playIndex + 1].rotBI - KeyFrame[playIndex].rotBI) / i_max_steps;
+	KeyFrame[playIndex].rotIncBIX = (KeyFrame[playIndex + 1].rotBIX - KeyFrame[playIndex].rotBIX) / i_max_steps;
+
+	KeyFrame[playIndex].incXHD = (KeyFrame[playIndex + 1].posXHD - KeyFrame[playIndex].posXHD) / i_max_steps;
+	KeyFrame[playIndex].incYHD = (KeyFrame[playIndex + 1].posYHD - KeyFrame[playIndex].posYHD) / i_max_steps;
+	KeyFrame[playIndex].incZHD = (KeyFrame[playIndex + 1].posZHD - KeyFrame[playIndex].posZHD) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncHD = (KeyFrame[playIndex + 1].rotHD - KeyFrame[playIndex].rotHD) / i_max_steps;
+
+	KeyFrame[playIndex].incXBD = (KeyFrame[playIndex + 1].posXBD - KeyFrame[playIndex].posXBD) / i_max_steps;
+	KeyFrame[playIndex].incYBD = (KeyFrame[playIndex + 1].posYBD - KeyFrame[playIndex].posYBD) / i_max_steps;
+	KeyFrame[playIndex].incZBD = (KeyFrame[playIndex + 1].posZBD - KeyFrame[playIndex].posZBD) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncBD = (KeyFrame[playIndex + 1].rotBD - KeyFrame[playIndex].rotBD) / i_max_steps;
+	KeyFrame[playIndex].rotIncBDX = (KeyFrame[playIndex + 1].rotBDX - KeyFrame[playIndex].rotBDX) / i_max_steps;
+
+}
 
 int main()
 {
@@ -183,6 +311,201 @@ int main()
 	Model personaCu ((char*)"Models/Persona/personaCu.obj");
 	Model personaBra ((char*)"Models/Persona/personaBraT.obj");
 
+	//Inicialización de KeyFrames
+	for (int i = 0; i < MAX_FRAMES; i++)
+	{
+		KeyFrame[i].posX = 0;
+		KeyFrame[i].incX = 0;
+		KeyFrame[i].incY = 0;
+		KeyFrame[i].incZ = 0;
+		KeyFrame[i].rotHI = 0;
+		KeyFrame[i].rotIncHI = 0;
+	}
+
+	// Guargando animacion KEYFRAMES 0
+	KeyFrame[0].posXHD = posXHD;
+	KeyFrame[0].posYHD = posYHD;
+	KeyFrame[0].posZHD = posZHD;
+	KeyFrame[0].rotHD = rotHD;
+
+	KeyFrame[0].posXBD = posXBD;
+	KeyFrame[0].posYBD = posYBD;
+	KeyFrame[0].posZBD = posZBD;
+	KeyFrame[0].rotBD = rotBD;
+	KeyFrame[0].rotBDX = rotBDX;
+
+	KeyFrame[0].posX = posX;
+	KeyFrame[0].posY = posY;
+	KeyFrame[0].posZ = posZ;
+	KeyFrame[0].rotHI = rotHI;
+
+	KeyFrame[0].posXBI = posXBI;
+	KeyFrame[0].posYBI = posYBI;
+	KeyFrame[0].posZBI = posZBI;
+	KeyFrame[0].rotBI = rotBI;
+	KeyFrame[0].rotBIX = rotBIX;
+
+
+	// Guargando animacion KEYFRAMES 1
+	KeyFrame[1].posXHD = posXHD;
+	KeyFrame[1].posYHD = posYHD;
+	KeyFrame[1].posZHD = posZHD;
+	KeyFrame[1].rotHD = -90.0f;
+
+	KeyFrame[1].posXBD = posXBD;
+	KeyFrame[1].posYBD = posYBD;
+	KeyFrame[1].posZBD = posZBD;
+	KeyFrame[1].rotBD = -90.0f;
+	KeyFrame[1].rotBDX = 0.0f;
+	
+	KeyFrame[1].posX = posX;
+	KeyFrame[1].posY = posY;
+	KeyFrame[1].posZ = posZ;
+	KeyFrame[1].rotHI = 0.0f;
+
+	KeyFrame[1].posXBI = posXBI;
+	KeyFrame[1].posYBI = posYBI;
+	KeyFrame[1].posZBI = posZBI;
+	KeyFrame[1].rotBI = 0.0f;
+	KeyFrame[1].rotBIX = 0.0f;
+
+	// Guargando animacion KEYFRAMES 2
+	KeyFrame[2].posXHD = posXHD;
+	KeyFrame[2].posYHD = posYHD;
+	KeyFrame[2].posZHD = posZHD;
+	KeyFrame[2].rotHD = -90.0f;
+
+	KeyFrame[2].posXBD = posXBD;
+	KeyFrame[2].posYBD = posYBD;
+	KeyFrame[2].posZBD = posZBD;
+	KeyFrame[2].rotBD = -90.0f;
+	KeyFrame[2].rotBDX = 0.0f;
+	
+	KeyFrame[2].posX = posX;
+	KeyFrame[2].posY = posY;
+	KeyFrame[2].posZ = posZ;
+	KeyFrame[2].rotHI = -90.0f;
+
+	KeyFrame[2].posXBI = posXBI;
+	KeyFrame[2].posYBI = posYBI;
+	KeyFrame[2].posZBI = posZBI;
+	KeyFrame[2].rotBI = -90.0f;
+	KeyFrame[2].rotBIX = 0.0f;
+
+	// Guargando animacion KEYFRAMES 3
+	KeyFrame[3].posXHD = posXHD;
+	KeyFrame[3].posYHD = posYHD;
+	KeyFrame[3].posZHD = posZHD;
+	KeyFrame[3].rotHD = -90.0f;
+
+	KeyFrame[3].posXBD = posXBD;
+	KeyFrame[3].posYBD = posYBD;
+	KeyFrame[3].posZBD = posZBD - 0.1;
+	KeyFrame[3].rotBD = -90.0f;
+	KeyFrame[3].rotBDX = -15.0f;
+
+	KeyFrame[3].posX = posX;
+	KeyFrame[3].posY = posY;
+	KeyFrame[3].posZ = posZ;
+	KeyFrame[3].rotHI = -90.0f;
+
+	KeyFrame[3].posXBI = posXBI;
+	KeyFrame[3].posYBI = posYBI;
+	KeyFrame[3].posZBI = posZBI;
+	KeyFrame[3].rotBI = -90.0f;
+	KeyFrame[3].rotBIX = 0.0f;
+
+	// Guargando animacion KEYFRAMES 4
+	KeyFrame[4].posXHD = posXHD;
+	KeyFrame[4].posYHD = posYHD;
+	KeyFrame[4].posZHD = posZHD;
+	KeyFrame[4].rotHD = -90.0f;
+
+	KeyFrame[4].posXBD = posXBD;
+	KeyFrame[4].posYBD = posYBD;
+	KeyFrame[4].posZBD = posZBD - 0.1;
+	KeyFrame[4].rotBD = -90.0f;
+	KeyFrame[4].rotBDX = -15.0f;
+
+	KeyFrame[4].posX = posX;
+	KeyFrame[4].posY = posY;
+	KeyFrame[4].posZ = posZ;
+	KeyFrame[4].rotHI = -90.0f;
+
+	KeyFrame[4].posXBI = posXBI;
+	KeyFrame[4].posYBI = posYBI;
+	KeyFrame[4].posZBI = posZBI + 0.1;
+	KeyFrame[4].rotBI = -90.0f;
+	KeyFrame[4].rotBIX = 15.0f;
+
+	// Guargando animacion KEYFRAMES 5
+	KeyFrame[5].posXHD = posXHD;
+	KeyFrame[5].posYHD = posYHD;
+	KeyFrame[5].posZHD = posZHD;
+	KeyFrame[5].rotHD = -120.0f;
+
+	KeyFrame[5].posXBD = posXBD;
+	KeyFrame[5].posYBD = posYBD;
+	KeyFrame[5].posZBD = posZBD;
+	KeyFrame[5].rotBD = -120.0f;
+	KeyFrame[5].rotBDX = 0.0f;
+
+	KeyFrame[5].posX = posX;
+	KeyFrame[5].posY = posY;
+	KeyFrame[5].posZ = posZ;
+	KeyFrame[5].rotHI = -90.0f;
+
+	KeyFrame[5].posXBI = posXBI;
+	KeyFrame[5].posYBI = posYBI;
+	KeyFrame[5].posZBI = posZBI + 0.1;
+	KeyFrame[5].rotBI = -90.0f;
+	KeyFrame[5].rotBIX = 15.0f;
+
+	// Guargando animacion KEYFRAMES 6
+	KeyFrame[6].posXHD = posXHD;
+	KeyFrame[6].posYHD = posYHD;
+	KeyFrame[6].posZHD = posZHD;
+	KeyFrame[6].rotHD = -120.0f;
+
+	KeyFrame[6].posXBD = posXBD;
+	KeyFrame[6].posYBD = posYBD;
+	KeyFrame[6].posZBD = posZBD;
+	KeyFrame[6].rotBD = -120.0f;
+	KeyFrame[6].rotBDX = 0.0f;
+
+	KeyFrame[6].posX = posX;
+	KeyFrame[6].posY = posY;
+	KeyFrame[6].posZ = posZ;
+	KeyFrame[6].rotHI = -120.0f;
+
+	KeyFrame[6].posXBI = posXBI;
+	KeyFrame[6].posYBI = posYBI;
+	KeyFrame[6].posZBI = posZBI;
+	KeyFrame[6].rotBI = -120.0f;
+	KeyFrame[6].rotBIX = 0.0f;
+
+	// Guargando animacion KEYFRAMES 7
+	KeyFrame[7].posXHD = posXHD;
+	KeyFrame[7].posYHD = posYHD;
+	KeyFrame[7].posZHD = posZHD;
+	KeyFrame[7].rotHD = 0.0f;
+
+	KeyFrame[7].posXBD = posXBD;
+	KeyFrame[7].posYBD = posYBD;
+	KeyFrame[7].posZBD = posZBD;
+	KeyFrame[7].rotBD = -.0f;
+	KeyFrame[7].rotBDX = 0.0f;
+
+	KeyFrame[7].posX = posX;
+	KeyFrame[7].posY = posY;
+	KeyFrame[7].posZ = posZ;
+	KeyFrame[7].rotHI = 0.0f;
+
+	KeyFrame[7].posXBI = posXBI;
+	KeyFrame[7].posYBI = posYBI;
+	KeyFrame[7].posZBI = posZBI;
+	KeyFrame[7].rotBI = 0.0f;
+	KeyFrame[7].rotBIX = 0.0f;
 
 	// Set texture units
 	lightingShader.Use();
@@ -552,22 +875,32 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloCu.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -40.21f));*/
+		model = glm::translate(model, glm::vec3(posXHD, posYHD, posZHD));
+		model = glm::rotate(model, glm::radians(rotHD), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloHomD.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -40.21f));*/
+		model = glm::translate(model, glm::vec3(posXBD, posYBD, posZBD));
+		model = glm::rotate(model, glm::radians(rotBD), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotBDX), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloBraD.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -39.76));*/
+		model = glm::translate(model, glm::vec3(posX, posY, posZ));
+		model = glm::rotate(model, glm::radians(rotHI), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloHomI.Draw(lightingShader);
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
+		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -39.76));*/
+		model = glm::translate(model, glm::vec3(posXBI, posYBI, posZBI));
+		model = glm::rotate(model, glm::radians(rotBI), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotBIX), glm::vec3(1.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloBraI.Draw(lightingShader);
@@ -762,6 +1095,7 @@ void animacion()
 		animacionBronto();
 		animacionTrex();
 		animacionPer();
+		animKeyFrame();
 	}
 }
 
@@ -923,4 +1257,71 @@ void animacionPer()
 		rotBrazo -= 0.5f;
 	else
 		brazo = false;
+}
+
+void animKeyFrame()
+{
+	if (play == false && (FrameIndex > 1))
+	{
+
+		resetElements();
+		//First Interpolation				
+		interpolation();
+
+		play = true;
+		playIndex = 0;
+		i_curr_steps = 0;
+	}
+	if (play)
+	{
+
+		if (i_curr_steps >= i_max_steps) //end of animation between frames?
+		{
+			playIndex++;
+			if (playIndex > FrameIndex - 2)	//end of total animation?
+			{
+				/*printf("Animaciones KeyFrames\n");*/
+				playIndex = 0;
+				play = false;
+			}
+			else //Next frame interpolations
+			{
+				i_curr_steps = 0; //Reset counter
+								  //Interpolation
+				interpolation();
+			}
+		}
+		else
+		{
+			//Draw animation
+			posX += KeyFrame[playIndex].incX;
+			posY += KeyFrame[playIndex].incY;
+			posZ += KeyFrame[playIndex].incZ;
+
+			rotHI += KeyFrame[playIndex].rotIncHI;
+
+			posXBI += KeyFrame[playIndex].incXBI;
+			posYBI += KeyFrame[playIndex].incYBI;
+			posZBI += KeyFrame[playIndex].incZBI;
+
+			rotBI += KeyFrame[playIndex].rotIncBI;
+			rotBIX += KeyFrame[playIndex].rotIncBIX;
+
+			posXHD += KeyFrame[playIndex].incXHD;
+			posYHD += KeyFrame[playIndex].incYHD;
+			posZHD += KeyFrame[playIndex].incZHD;
+
+			rotHD += KeyFrame[playIndex].rotIncHD;
+
+			posXBD += KeyFrame[playIndex].incXBD;
+			posYBD += KeyFrame[playIndex].incYBD;
+			posZBD += KeyFrame[playIndex].incZBD;
+
+			rotBD += KeyFrame[playIndex].rotIncBD;
+			rotBDX += KeyFrame[playIndex].rotIncBDX;
+
+			i_curr_steps++;
+		}
+
+	}
 }
