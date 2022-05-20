@@ -98,7 +98,7 @@ float rotBrazo = 0.0f;
 // Positions of the point lights
 // Indicar en el lighting.frag el num de point ligths y agregar sus posiciones aqui
 glm::vec3 pointLightPositions[] = {
-	glm::vec3(0.0f,0.0f,0.0f)
+	glm::vec3(0.0f, 7.5f, 40.7f)
 };
 
 glm::vec3 Light1 = glm::vec3(0);
@@ -261,7 +261,7 @@ int main()
 	glfwSetCursorPosCallback(window, MouseCallback);
 
 	// GLFW Options
-	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
 	glewExperimental = GL_TRUE;
@@ -284,6 +284,9 @@ int main()
 	Model habitats ((char*)"Models/Piso/habitats2.obj");
 	Model caja ((char*)"Models/Piso/Caja.obj");
 	Model barrotes ((char*)"Models/Piso/barrotes.obj");
+	Model lampara ((char*)"Models/Piso/lampara.obj");
+	Model lamparas ((char*)"Models/Piso/streetlamp.obj");
+	Model mateo ((char*)"Models/Piso/mateo.obj");
 	
 	Model fuente ((char*)"Models/Sodas/Fuente/fuenteC.obj");
 	Model fuenteAgua ((char*)"Models/Sodas/Fuente/fuenteA.obj");
@@ -586,7 +589,6 @@ int main()
 		glm::vec3(-1.3f,  1.0f, -1.5f)
 	};
 
-
 	// First, set the container's VAO (and VBO)
 	GLuint VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
@@ -670,7 +672,6 @@ int main()
 		glEnable(GL_DEPTH_TEST);
 		/*SKYBOX*/
 
-
 		//Load Model
 	    // Use cooresponding shader when setting uniforms/drawing objects
 		lightingShader.Use();
@@ -687,14 +688,14 @@ int main()
 
 		// Point light 1
 		glm::vec3 lightColor;
-		lightColor.x = abs(sin(glfwGetTime() * Light1.x));
-		lightColor.y = abs(sin(glfwGetTime() * Light1.y));
-		lightColor.z = sin(glfwGetTime() * Light1.z);
+		lightColor.x = Light1.x;
+		lightColor.y = Light1.y;
+		lightColor.z = Light1.z;
 
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].position"), pointLightPositions[0].x, pointLightPositions[0].y, pointLightPositions[0].z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].ambient"), lightColor.x, lightColor.y, lightColor.z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].diffuse"), lightColor.x, lightColor.y, lightColor.z);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 0.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].constant"), 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].linear"), 0.045f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"), 0.075f);
@@ -742,6 +743,24 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		piso.Draw(lightingShader);
+
+		/* Lampara */
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		lampara.Draw(lightingShader);
+
+		/* Lamparas */
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		lamparas.Draw(lightingShader);
+
+		/* Mateo */
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mateo.Draw(lightingShader);
 
 		/* Habitats */
 		model = glm::mat4(1);

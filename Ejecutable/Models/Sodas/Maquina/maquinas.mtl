@@ -1,0 +1,40 @@
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Vending_machine1.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Vending_machine1_S.png
+Ns 18.00
+newmtl phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Vending_machine2.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Vending_machine2_S.png
+Ns 18.00
+newmtl phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Vending_machine3.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Vending_machine3_S.png
+Ns 18.00
+newmtl phong4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Water_cooler.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Water_cooler_S.png
+Ns 18.00

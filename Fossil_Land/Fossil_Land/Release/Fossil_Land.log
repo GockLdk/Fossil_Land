@@ -1,34 +1,19 @@
 ﻿  Main.cpp
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(403,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(426,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(437,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(460,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(655,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(690,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(691,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(692,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1076,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1077,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1081,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1082,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1084,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1085,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(406,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(429,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(440,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(463,30): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(657,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1095,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1096,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1100,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1101,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1103,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+M:\Windows\Uni\Semestre2022-2\Compu Grafica\Teoria\ProyectoFinal\Fossil_Land\Fossil_Land\Fossil_Land\Main.cpp(1104,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 soil2-debug.lib(SOIL2.obj) : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/OPT:ICF'
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  24 of 701 functions ( 3.4%) were compiled, the rest were copied from previous compilation.
+  1 of 700 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
