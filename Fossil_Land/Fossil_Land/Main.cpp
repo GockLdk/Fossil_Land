@@ -646,7 +646,6 @@ int main()
 
 	GLuint cubemapTexture = TextureLoading::LoadCubemap(faces);
 	/*SKYBOX*/
-
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 100.0f);
 
 	// Game loop
@@ -845,9 +844,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		maquinas.Draw(lightingShader);
-
 		
-
 		/* DINOSAURIOS */
 
 		/* Brontosaurio */
@@ -863,7 +860,6 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		brontoCa.Draw(lightingShader);
 		
-
 		/* Pterodactilo */
 		model = glm::mat4(1);
 		model = glm::translate(model, PosIniPtero + glm::vec3(movKitX, 0, movKitZ));
@@ -886,7 +882,6 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		pteroAlaI.Draw(lightingShader);
 
-
 		/* Velociraptor */
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(36.0f, 0.0f, -40.0f));
@@ -894,14 +889,12 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloCu.Draw(lightingShader);
 		model = glm::mat4(1);
-		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -40.21f));*/
 		model = glm::translate(model, glm::vec3(posXHD, posYHD, posZHD));
 		model = glm::rotate(model, glm::radians(rotHD), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloHomD.Draw(lightingShader);
 		model = glm::mat4(1);
-		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -40.21f));*/
 		model = glm::translate(model, glm::vec3(posXBD, posYBD, posZBD));
 		model = glm::rotate(model, glm::radians(rotBD), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::rotate(model, glm::radians(rotBDX), glm::vec3(1.0f, 0.0f, 0.0f));
@@ -909,14 +902,12 @@ int main()
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloBraD.Draw(lightingShader);
 		model = glm::mat4(1);
-		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -39.76));*/
 		model = glm::translate(model, glm::vec3(posX, posY, posZ));
 		model = glm::rotate(model, glm::radians(rotHI), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		veloHomI.Draw(lightingShader);
 		model = glm::mat4(1);
-		/*model = glm::translate(model, glm::vec3(34.89f, 1.85f, -39.76));*/
 		model = glm::translate(model, glm::vec3(posXBI, posYBI, posZBI));
 		model = glm::rotate(model, glm::radians(rotBI), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::rotate(model, glm::radians(rotBIX), glm::vec3(1.0f, 0.0f, 0.0f));

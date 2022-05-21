@@ -1,2 +1,8 @@
-# Fossil_Land
-Proyecto final para la materia de computaciÃ³n grÃ¡fica e interacciÃ³n humano-computadora del grupo 1 semestre 2022-2.
+# Fossil Land.
+Este repositorio contiene el proyecto final de Computación Gráfica e Interacción Humana grupo 01.
+![Logo](./Fossil_Land/Fossil_Land/Models/Piso/logo.png)
+
+## Documentación
+- [Instalación y Ejecución](./Documentacion/ManualUsuario.pdf) 
+- [Manual Técnico](./Documentacion/ManualTecnico.pdf)
+
